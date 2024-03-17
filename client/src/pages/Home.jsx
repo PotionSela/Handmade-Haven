@@ -7,7 +7,7 @@ const Header = () => {
 return (
     {Auth.loggedIn() ? (
         <>
-        
+
         </>
     ) : (
         <>
