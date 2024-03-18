@@ -1,5 +1,3 @@
-import decode from 'jwt-decode';
-
 class AuthService {
     loggedIn() {
         const token = this.getToken();
@@ -7,3 +5,7 @@ class AuthService {
         return token && !this.isTokenExpired(token) ? true : false;
     }
 }
+
+const authService = new AuthService();
+export default authService;
+
