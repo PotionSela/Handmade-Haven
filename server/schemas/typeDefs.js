@@ -40,8 +40,8 @@ const typeDefs = `
   type Mutation {
     addUser(username: String!, email: String!, password: String!): Auth
     login(email: String!, password: String!): Auth
-    addThought(thoughtText: String!, image: Upload): Thought
-    updateThought(thoughtId: ID!, thoughtText: String, image: Upload): Thought
+    addThought(thoughtText: String!, image: Float): Thought
+    updateThought(thoughtId: ID!, thoughtText: String, image: Float): Thought
     addComment(
       thoughtId: ID!
       commentText: String!

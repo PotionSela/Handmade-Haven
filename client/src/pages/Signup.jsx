@@ -11,8 +11,11 @@ const Signup = () => {
     username: '',
     email: '',
     password: '',
-  });
-  const [addUser, { error, data }] = useMutation(ADD_USER);
+  })
+
+  
+
+  const [addUser, { error, data } ] = useMutation(ADD_USER);
 
   const handleChange = (event) => {
     const { name, value } = event.target;
@@ -33,9 +36,17 @@ const Signup = () => {
       });
 
       Auth.login(data.addUser.token);
+      console.log(data)
     } catch (e) {
       console.error(e);
     }
+
+    // clear form values
+    setFormState({
+      username: '',
+      email: '',
+      password: '',
+    })
   };
 
   return (
