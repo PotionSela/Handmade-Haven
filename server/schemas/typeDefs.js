@@ -11,7 +11,7 @@ const typeDefs = `
   type Thought {
     _id: ID
     thoughtText: String
-    thoughtAuthor: User!
+    thoughtAuthor: String!
     createdAt: String
     comments: [Comment]!
     imageId: ID
@@ -20,7 +20,7 @@ const typeDefs = `
   type Comment {
     _id: ID
     commentText: String
-    commentAuthor: User!
+    commentAuthor: String!
     createdAt: String
   }
 
