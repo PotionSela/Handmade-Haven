@@ -3,6 +3,7 @@ const jwt = require('jsonwebtoken');
 
 const secret = process.env.SECRET;
 const expiration = '2h';
+console.log(secret);
 
 module.exports = {
   AuthenticationError: new GraphQLError('Could not authenticate user.', {
@@ -11,10 +12,10 @@ module.exports = {
     },
   }),
   authMiddleware: function ({ req }) {
-    let token = req.body.token || req.query.token || req.headers.authorization;
+    let token = req.headers.authorization || '';
 
-    if (req.headers.authorization) {
-      token = token.split(' ').pop().trim();
+    if (token.startsWith('Bearer ')) {
+      token = token.slice(7, token.length).trim();
     }
 
     if (!token) {
@@ -22,10 +23,10 @@ module.exports = {
     }
 //if token can be verified, add the decoded user's data to the request so it can be accessed in the resolver
     try {
-      const { data } = jwt.verify(token, secret, { maxAge: expiration });
+      const { data } = jwt.verify(token, secret);
       req.user = data;
-    } catch {
-      console.log('Invalid Token');
+    } catch (error) {
+      console.error('Invalid Token:', error);
     }
 
     //return the request object so it can be passed to the resolver as 'context'
