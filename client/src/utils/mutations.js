@@ -26,9 +26,9 @@ export const ADD_USER = gql`
 
 export const ADD_THOUGHT = gql`
   mutation addThought ($thoughtText: String!, $thoughtAuthor: String!, $image: Upload) {
-    addThought (thoughtText: $thoughtText, thoughtAuthor: $thoughtAuthor, image: $image) {
-        thoughtText
-        thoughtAuthor
+    addThought (thoughtText: $thoughtText, thoughtAuthor: $thoughtAuthor, image: $image) {  
+      thoughtText
+      thoughtAuthor
     }
   }
 `
@@ -40,7 +40,7 @@ export const UPDATE_THOUGHT = gql`
       thoughtText
       thoughtAuthor
     }
-}
+} 
 `
 
 export const ADD_COMMENT = gql`
