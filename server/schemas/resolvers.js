@@ -59,9 +59,9 @@ const resolvers = {
 
       return { token, user };
     },
-    addThought: async (parent, { input: { thoughtText, image } }) => {
+    addThought: async (parent, { thoughtText, thoughtAuthor, image }) => {
       // Logic to handle image upload and save image data to the database
-      const thought = await Thought.create({ thoughtText });
+      const thought = await Thought.create({ thoughtText, thoughtAuthor });
 
       // If image is provided, handle image upload and store image data
       if (image) {

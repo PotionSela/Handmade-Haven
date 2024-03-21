@@ -37,12 +37,15 @@ const ThoughtForm = () => {
     const { name, value } = event.target;
 
     if (name === 'thoughtText' && value.length <= 280) {
-      setFormState({ ...formState, [name]: value });
+      setFormState({
+        ...formState,
+        [name]: value
+      });
       setCharacterCount(value.length);
     } else if (name !== 'thoughtText') {
-      setFormState({ ...formState, [name]: value });
+      setFormState({ ...formState, [name]: value});
     }
-  };
+  }
 
   return (
     <div>
