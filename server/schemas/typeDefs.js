@@ -1,4 +1,6 @@
 const typeDefs = `
+scalar Upload
+
   type User {
     _id: ID
     username: String
@@ -11,7 +13,7 @@ const typeDefs = `
   type Thought {
     _id: ID
     thoughtText: String
-    thoughtAuthor: User!
+    thoughtAuthor: String!
     createdAt: String
     comments: [Comment]!
     imageId: ID
@@ -20,7 +22,7 @@ const typeDefs = `
   type Comment {
     _id: ID
     commentText: String
-    commentAuthor: User!
+    commentAuthor: String!
     createdAt: String
   }
 
@@ -40,8 +42,8 @@ const typeDefs = `
   type Mutation {
     addUser(username: String!, email: String!, password: String!): Auth
     login(email: String!, password: String!): Auth
-    addThought(thoughtText: String!, image: Float): Thought
-    updateThought(thoughtId: ID!, thoughtText: String, image: Float): Thought
+    addThought(thoughtText: String!, thoughtAuthor: String!, image: Upload): Thought
+    updateThought(thoughtId: ID!, thoughtText: String, image: Upload): Thought
     addComment(
       thoughtId: ID!
       commentText: String!
