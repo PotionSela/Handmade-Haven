@@ -1,9 +1,9 @@
-import ThoughtForm from '../components/NewPost'
+import AddThoughtForm from '../components/NewPost'
 
 const MyProjects = () => {
 
     return (
-        <ThoughtForm />
+        <AddThoughtForm />
     )
 
 }
