@@ -7,6 +7,8 @@ import Login from './pages/Login.jsx';
 import Signup from './pages/Signup.jsx';
 import Home from './pages/Home.jsx';
 import Error from './pages/ErrorPage.jsx';
+import MyProjects from './pages/MyProjects.jsx';
+
 //Define Accessible Routes
 const router = createBrowserRouter([
   {
@@ -25,6 +27,10 @@ const router = createBrowserRouter([
       {
         path: '/Signup',
         element: <Signup />,
+      },
+      {
+        path: '/my-projects',
+        element: <MyProjects />,
       },
     ],
   },
