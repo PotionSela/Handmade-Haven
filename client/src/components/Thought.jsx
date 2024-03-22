@@ -12,7 +12,7 @@ const ThoughtList = ({ thoughts, title }) => {
         {thoughts &&
           thoughts.map((thought) => (
             <div key={thought._id} className="card mb-3">
-              {/* Made a spot for clicking on the thought */}
+              {/* Made a spot for clicking on the posts */}
             <h4 className="card-header bg-primary text-light p-2 m-0">
               {thought.thoughtAuthor} <br />
               <span style={{ fontSize: '1rem' }}>
