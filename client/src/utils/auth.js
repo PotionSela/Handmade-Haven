@@ -28,6 +28,11 @@ class AuthService {
         localStorage.setItem('id_token', idToken);
         window.location.reload();
     }
+
+    logout() {
+        localStorage.removeItem('id_token'); // Update to remove the token using the correct key
+        window.location.reload();
+    }
 }
 
 
