@@ -15,7 +15,7 @@ if (error) return <p>Error: {error.message}</p>;
 
     return (
         <div>
-            <Dropzone />
+            {/* <Dropzone /> */}
             {authService.loggedIn() ? (
                 <>
                     <ThoughtList thoughts={data.thoughts} title="thoughts list"/>

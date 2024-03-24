@@ -32,6 +32,7 @@ const startApolloServer = async () => {
 
   app.use(express.urlencoded({ extended: false }));
   app.use(express.json());
+  app.use('/images', express.static(path.join(__dirname, './uploads')))
   app.post('/upload', upload.single('file'), (req, res) => {
     res.json({ imageUrl: req.file.path }); // Return the URL of the uploaded image
 });

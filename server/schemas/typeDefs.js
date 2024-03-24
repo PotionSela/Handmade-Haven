@@ -16,7 +16,7 @@ scalar Upload
     thoughtAuthor: String!
     createdAt: String
     comments: [Comment]!
-    imageId: ID
+    image: String
   }
 
   type Comment {

@@ -27,6 +27,7 @@ export const ADD_USER = gql`
 export const ADD_THOUGHT = gql`
   mutation addThought ($thoughtText: String!, $thoughtAuthor: String!, $image: Upload) {
     addThought (thoughtText: $thoughtText, thoughtAuthor: $thoughtAuthor, image: $image) {  
+      image
       thoughtText
       thoughtAuthor
     }

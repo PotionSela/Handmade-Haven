@@ -28,6 +28,7 @@ const ThoughtList = ({ thoughts, title }) => {
             >
               Join the discussion on this thought.
             </Link>
+            {thought.image && <img src={`/images/${thought.image}`}></img>}
           </div>
           ))}
       </div>
