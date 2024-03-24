@@ -7,7 +7,13 @@ What problem does it solve? It's an online crafting community that has the extra
 What did you learn?
 What makes your project stand out?
 ## Table of Contents
-hello
-[text](client)
-[text](node_modules)
-[text](server)
+- [Description](#description)
+- [Screenshots](#screenshots)
+- [Live Site](#live-site)
+- [Technologies Used](#technologies-used)
+- [Installation](#installation)
+- [Features](#features)
+- [Usage Information](#usage-information)
+- [Contribution Guidelines](#contribution-guidelines)
+- [License](#license)
+- [Questions](#questions)
