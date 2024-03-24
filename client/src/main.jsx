@@ -8,6 +8,7 @@ import Signup from './pages/Signup.jsx';
 import Home from './pages/Home.jsx';
 import Error from './pages/ErrorPage.jsx';
 import MyProjects from './pages/MyProjects.jsx';
+import SingleThought from './pages/SingleThought.jsx';
 
 //Define Accessible Routes
 const router = createBrowserRouter([
@@ -32,6 +33,10 @@ const router = createBrowserRouter([
         path: '/my-projects',
         element: <MyProjects />,
       },
+      {
+        path: '/thoughts/:thoughtId',
+        element: <SingleThought />
+      }
     ],
   },
 ]);

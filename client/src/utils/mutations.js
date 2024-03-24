@@ -45,11 +45,17 @@ export const UPDATE_THOUGHT = gql`
 `
 
 export const ADD_COMMENT = gql`
-  mutation addComment ($thoughtId: ID!, $commentText: String, $commentAuthor: String!) {
+  mutation addComment ($thoughtId: ID!, $commentText: String!, $commentAuthor: String!) {
     addComment (thoughtId: $thoughtId, commentText: $commentText, commentAuthor: $commentAuthor) {
-      thoughtId
       thoughtText
       thoughtAuthor
+      createdAt
+      comments {
+        _id
+        commentText
+        commentAuthor
+        createdAt
+      }
     }
   }
 `
