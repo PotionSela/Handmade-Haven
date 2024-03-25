@@ -11,9 +11,21 @@ body {
 .card-header {
     background-color: rgb(146, 55, 77);
     padding: 5%;
+    color: white;
+}
+
+.card{
+    background-color: rgb(85, 156, 173);
 }
 
 .inputPadding {
     padding-top: 2%;
     padding-bottom: 2%;
+}
+
+.image-container {
+    max-width: 50%;
+    height: 50%;
+    margin: auto;
+    display: block;
 }

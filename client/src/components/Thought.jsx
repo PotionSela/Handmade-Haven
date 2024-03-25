@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
-import './Style/Thought.css'
+import './Style/Home.css'
 
 const ThoughtList = ({ thoughts, title }) => {
     if (!thoughts.length) {
@@ -14,22 +14,30 @@ const ThoughtList = ({ thoughts, title }) => {
           thoughts.map((thought) => (
             <div key={thought._id} className="card mb-3">
               {/* Made a spot for clicking on the posts */}
-            <h4 className="card-header bg-primary text-light p-2 m-0">
+            <h4 className="card-header p-2 m-0">
               {thought.thoughtAuthor} <br />
               <span style={{ fontSize: '1rem' }}>
                 had this thought on {thought.createdAt}
               </span>
             </h4>
-            <div className="card-body bg-light p-2">
+            <div className="project">
+              <div>
               <p>{thought.thoughtText}</p>
             </div>
             <Link
-              className="btn btn-primary btn-block btn-squared"
+              className="btn btn-secondary btn-block btn-outline-dark"
               to={`/thoughts/${thought._id}`}
             >
               Join the discussion on this thought.
             </Link>
-            {thought.image && <img src={`/images/${thought.image}`}></img>}
+            {thought.image && (
+              <img
+                src={`/images/${thought.image}`}
+                className='image-container'
+                alt="Thought Image"
+              />
+            )}
+            </div>
           </div>
           ))}
       </div>
