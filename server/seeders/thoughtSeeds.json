@@ -1,43 +1,42 @@
 [
-    {
-      "thoughtText": "Everyone knows that debugging is twice as hard as writing a program in the first place. So if you're as clever as you can be when you write it, how will you ever debug it?",
-      "thoughtAuthor": "Brian Kernighan"
-    },
-    {
-      "thoughtText": "Some of the best programming is done on paper, really. Putting it into the computer is just a minor detail.",
-      "thoughtAuthor": "Max Kanat-Alexander"
-    },
-    {
-      "thoughtText": "When you don't create things, you become defined by your tastes rather than ability. Your tastes only narrow & exclude people. So create.",
-      "thoughtAuthor": "Why The Lucky Stiff"
-    },
-    {
-      "thoughtText": "I'm not a great programmer; I'm just a good programmer with great habits.",
-      "thoughtAuthor": "Kent Beck"
-    },
-    {
-      "thoughtText": "Walking on water and developing software from a specification are easy if both are frozen.",
-      "thoughtAuthor": "Edward V. Berard"
-    },
-    {
-      "thoughtText": "The most disastrous thing that you can ever learn is your first programming language.",
-      "thoughtAuthor": "Alan Kay"
-    },
-    {
-      "thoughtText": "The most important property of a program is whether it accomplishes the intention of its user.",
-      "thoughtAuthor": "C.A.R. Hoare"
-    },
-    {
-      "thoughtText": "Delivering good software today is often better than perfect software tomorrow, so finish things and ship.",
-      "thoughtAuthor": "David Thomas"
-    },
-    {
-      "thoughtText": "If you optimize everything, you will always be unhappy.",
-      "thoughtAuthor": "Donald Knuth"
-    },
-    {
-      "thoughtText": "It's not a bug; it's an undocumented feature.",
-      "thoughtAuthor": "Lernantino"
-    }
-  ]
-  
+  {
+    "thoughtText": "Started a new knitting project today. Excited to see how it turns out!",
+    "thoughtAuthor": "Patrick Ivy"
+  },
+  {
+    "thoughtText": "Learning a new crochet pattern and having a blast! It's challenging but so rewarding.",
+    "thoughtAuthor": "Jack Squillo"
+  },
+  {
+    "thoughtText": "Feeling inspired to start a new clay project. Time to get creative!",
+    "thoughtAuthor": "Harry Rivers"
+  },
+  {
+    "thoughtText": "Having difficulty with my new sewing patterns. Any tips or advice?",
+    "thoughtAuthor": "Gina Belcher"
+  },
+  {
+    "thoughtText": "Completed my first woodworking project! Feeling accomplished and ready for more.",
+    "thoughtAuthor": "Frank Wright"
+  },
+  {
+    "thoughtText": "Experimenting with watercolor painting techniques today. Loving the freedom of expression!",
+    "thoughtAuthor": "Eva Lopez"
+  },
+  {
+    "thoughtText": "Working on a DIY home decor project. Can't wait to see the final result!",
+    "thoughtAuthor": "Charlie McClure"
+  },
+  {
+    "thoughtText": "Embarking on a journey of quilting. It's a new skill, but I'm determined to master it!",
+    "thoughtAuthor": "Alice Garcia"
+  },
+  {
+    "thoughtText": "Exploring the art of macramé. It's both relaxing and therapeutic.",
+    "thoughtAuthor": "Robbie Harris"
+  },
+  {
+    "thoughtText": "Attempting to make homemade candles for the first time. Wish me luck!",
+    "thoughtAuthor": "Sarah Smith"
+  }
+]
