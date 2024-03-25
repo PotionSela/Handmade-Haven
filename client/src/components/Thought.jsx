@@ -1,5 +1,6 @@
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
+import './Style/Thought.css'
 
 const ThoughtList = ({ thoughts, title }) => {
     if (!thoughts.length) {

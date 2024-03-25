@@ -1,0 +1,19 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-color: rgb(85, 156, 173);
+}
+
+.project {
+    background-color: rgb(140, 83, 131);
+}
+
+.card-header {
+    background-color: rgb(146, 55, 77);
+    padding: 5%;
+}
+
+.inputPadding {
+    padding-top: 2%;
+    padding-bottom: 2%;
+}
