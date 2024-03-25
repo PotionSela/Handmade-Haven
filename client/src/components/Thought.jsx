@@ -39,21 +39,22 @@ const ThoughtList = ({ thoughts, title }) => {
             )}
             </div>
           </div>
-          ))}
-      </div>
-    );
-  };
+        ))}
+    </div>
+  );
+};
 
-  ThoughtList.propTypes - {
-    thoughts: PropTypes.arrayOf(
-        PropTypes.shape({
-            _id: PropTypes.string.isRequired,
-            thoughtAuthor: PropTypes.string.isRequired,
-            createdAt: PropTypes.string.isRequired,
-            thoughtText: PropTypes.string.isRequired,
-          })
-        ).isRequired,
-        title: PropTypes.string.isRequired,
-      };
-  
-  export default ThoughtList;
+ThoughtList.propTypes = {
+  thoughts: PropTypes.arrayOf(
+    PropTypes.shape({
+      _id: PropTypes.string.isRequired,
+      thoughtAuthor: PropTypes.string.isRequired,
+      createdAt: PropTypes.string.isRequired,
+      thoughtText: PropTypes.string.isRequired,
+      image: PropTypes.string, // Added image prop type
+    })
+  ).isRequired,
+  title: PropTypes.string.isRequired,
+};
+
+export default ThoughtList;

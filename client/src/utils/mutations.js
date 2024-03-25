@@ -63,7 +63,9 @@ export const ADD_COMMENT = gql`
 export const REMOVE_THOUGHT = gql`
   mutation removeThought ($thoughtId: ID!) {
     removeThought (thoughtId: $thoughtId) {
-      thoughtId
+      thoughtText
+      thoughtAuthor
+      createdAt
     }
   }
 `
@@ -71,8 +73,13 @@ export const REMOVE_THOUGHT = gql`
 export const REMOVE_COMMENT = gql`
   mutation removeComment ($thoughtId: ID!, $commentId: ID!) {
     removeComment (thoughtId: $thoughtId, commentId: $commentId) {
-      thoughtId
-      commentId
+      thoughtText
+      comments {
+        _id
+        commentText
+        commentAuthor
+        createdAt
+      }
     }
   }
 `
