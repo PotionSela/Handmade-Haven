@@ -1,29 +1,31 @@
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
+import './Style/Home.css'
 
 const ThoughtList = ({ thoughts, title }) => {
-  if (!thoughts.length) {
-    return <h3>No Thoughts Yet</h3>;
-  }
-
-  return (
-    <div>
-      <h3>{title}</h3>
-      {thoughts &&
-        thoughts.map((thought) => (
-          <div key={thought._id} className="card mb-3">
-            {/* Made a spot for clicking on the posts */}
-            <h4 className="card-header bg-primary text-light p-2 m-0">
+    if (!thoughts.length) {
+      return <h3>No Thoughts Yet</h3>;
+    }
+  
+    return (
+      <div>
+        <h3>{title}</h3>
+        {thoughts &&
+          thoughts.map((thought) => (
+            <div key={thought._id} className="card mb-3">
+              {/* Made a spot for clicking on the posts */}
+            <h4 className="card-header p-2 m-0">
               {thought.thoughtAuthor} <br />
               <span style={{ fontSize: '1rem' }}>
                 had this thought on {thought.createdAt}
               </span>
             </h4>
-            <div className="card-body bg-light p-2">
+            <div className="project">
+              <div>
               <p>{thought.thoughtText}</p>
             </div>
             <Link
-              className="btn btn-primary btn-block btn-squared"
+              className="btn btn-secondary btn-block btn-outline-dark"
               to={`/thoughts/${thought._id}`}
             >
               Join the discussion on this thought.
@@ -31,10 +33,11 @@ const ThoughtList = ({ thoughts, title }) => {
             {thought.image && (
               <img
                 src={`/images/${thought.image}`}
-                style={{ maxWidth: '100%', height: 'auto' }} // Adjust sizing here
+                className='image-container'
                 alt="Thought Image"
               />
             )}
+            </div>
           </div>
         ))}
     </div>
