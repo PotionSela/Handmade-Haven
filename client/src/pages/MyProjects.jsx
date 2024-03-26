@@ -7,7 +7,7 @@ import MyThoughts from '../components/MyThoughts';
 
 const MyProjects = () => { 
 
-    const currentUser = AuthService.getProfile();
+    const currentUser = AuthService.getUsername();
 
     const { loading, error, data } = useQuery(GET_USER_THOUGHTS, {
         variables: { username: currentUser },
