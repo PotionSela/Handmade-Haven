@@ -19,6 +19,8 @@ scalar Upload
     image: String
   }
 
+
+
   type Comment {
     _id: ID
     commentText: String
@@ -37,6 +39,7 @@ scalar Upload
     thoughts: [Thought]
     thought(thoughtId: ID!): Thought
     comments(thoughtId: ID!): [Comment]
+    userThoughts(username: String): [Thought!]!
   }
 
   type Mutation {

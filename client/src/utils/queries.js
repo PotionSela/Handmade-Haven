@@ -34,3 +34,13 @@ export const QUERY_SINGLE_THOUGHT = gql`
     }
   }
 `;
+
+export const GET_USER_THOUGHTS = gql`
+query GetUserThoughts($username: String) {
+  userThoughts(username: $username) {
+    _id
+    thoughtText
+    thoughtAuthor
+    createdAt
+  }
+}`

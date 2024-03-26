@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { useMutation } from '@apollo/client';
 import Dropzone from './Dropzone';
 import { ADD_THOUGHT } from '../utils/mutations';
+import '../components/Style/Home.css'
 
 const ThoughtForm = () => {
   const [formState, setFormState] = useState({
@@ -49,9 +50,10 @@ const ThoughtForm = () => {
   }
 
   return (
-    <div>
-      <h3>Add your latest project!</h3>
-
+    <div className="project rounded">
+      <h3 className="card-header rounded-top">Add your latest project!</h3>
+      <div className="inputPadding form-container">
+      <div className="dropzone rounded card-header">
       <p
         className={`m-0 ${
           characterCount === 280 || error ? 'text-danger' : ''
@@ -60,7 +62,11 @@ const ThoughtForm = () => {
         Character Count: {characterCount}/280
         {error && <span className="ml-2">Something went wrong...</span>}
       </p>
-      <Dropzone formState={formState} setFormState={setFormState} />
+      <Dropzone
+        formState={formState}
+        setFormState={setFormState}
+        />
+        </div>
       <form
         className="flex-row justify-center justify-space-between-md align-center"
         onSubmit={handleFormSubmit}
@@ -85,7 +91,7 @@ const ThoughtForm = () => {
         </div>
 
         <div className="col-12 col-lg-3">
-          <button className="btn btn-primary btn-block py-3" type="submit">
+          <button className="btn btn-secondary btn-block py-3 btn-outline-dark" type="submit">
             Add Project
           </button>
         </div>
@@ -95,6 +101,7 @@ const ThoughtForm = () => {
           </div>
         )}
       </form>
+    </div>
     </div>
   );
 };

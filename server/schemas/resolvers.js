@@ -33,6 +33,13 @@ const resolvers = {
     thought: async (parent, { thoughtId }) => {
       return Thought.findOne({ _id: thoughtId });
     },
+    userThoughts: async (parent, { username }, { user }) => {
+      const params = username ? { thoughtAuthor: username } : {};
+      if(!user) {
+        return Thought.find(params).sort({ createdAt: -1 });
+      }
+      return Thought.find ({ ...params, thoughtAuthor: user.username }).sort({ createdAt: -1 });
+    },
   },
 
   Mutation: {
