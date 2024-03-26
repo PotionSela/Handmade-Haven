@@ -135,17 +135,21 @@ const resolvers = {
 
       return thought;
     },
-    addComment: async (parent, { thoughtId, commentText, commentAuthor }) => {
+    addComment: async (parent, { thoughtId, commentText}, context) => {
       // This is checking the thoughtId to comment on that specific data
-      const thought = await Thought.findById(thoughtId);
+      if (context.user) {
+       const thought = await Thought.findById(thoughtId);
 
       if (!thought) {
         throw new Error('Thought not found');
       }
 
-      thought.comments.push({ commentText, commentAuthor });
+      thought.comments.push({ commentText, commentAuthor: context.user.username});
       await thought.save();
-      return thought;
+      return thought; 
+      } else {
+        throw AuthenticationError;
+      }
     },
     removeThought: async (parent, { thoughtId }) => {
       const thought = await Thought.findOneAndDelete({ _id: thoughtId });
