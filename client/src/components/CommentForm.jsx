@@ -14,7 +14,7 @@ const CommentForm = ({ thoughtId }) => {
 
   const handleFormSubmit = async (event) => {
     event.preventDefault();
-    console.log('Brother'); // Just for testing purposes
+    // console.log('Brother'); // Just for testing purposes
 
     try {
       const { data } = await addComment({
