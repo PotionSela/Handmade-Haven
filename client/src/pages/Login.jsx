@@ -54,7 +54,7 @@ const Login = () => {
       <div className="col-12 col-lg-10">
         <div className="project rounded">
           <h4 className= "card-header rounded-top">Login</h4>
-          <div className="card-body">
+          <div>
             {isLoggedIn ? (
               <p>
                 Success! You may now head{' '}
