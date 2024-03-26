@@ -1,3 +1,5 @@
+//Logic to display all thoughts from all users on dashboard page
+
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import './Style/Home.css'

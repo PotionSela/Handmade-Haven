@@ -1,3 +1,5 @@
+//Page to display when error occurs
+
 import { useRouteError } from "react-router-dom";
 
 export default function ErrorPage() {

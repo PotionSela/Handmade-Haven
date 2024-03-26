@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import "./Style/Header.css";
 import Auth from "../utils/auth";
 
+
 export default function Header() {
   const logout = (event) => {
     event.preventDefault();

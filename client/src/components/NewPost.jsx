@@ -1,9 +1,12 @@
+//Logic to allow user to post a new project
+
 import { useState } from 'react';
 import { useMutation } from '@apollo/client';
 import Dropzone from './Dropzone';
 import { ADD_THOUGHT } from '../utils/mutations';
 import '../components/Style/Home.css'
 
+//Set all text boxes to blank to start
 const ThoughtForm = () => {
   const [formState, setFormState] = useState({
     thoughtText: '',
@@ -35,6 +38,7 @@ const ThoughtForm = () => {
     }
   };
 
+  //Function to pass users input into database
   const handleChange = (event) => {
     const { name, value } = event.target;
 

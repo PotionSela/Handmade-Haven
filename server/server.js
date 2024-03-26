@@ -42,7 +42,6 @@ const startApolloServer = async () => {
   }));
 
   if (process.env.NODE_ENV === 'production') {
-    console.log("Hello");
     app.use(express.static(path.join(__dirname, '../client/dist')));
 
     app.get('*', (req, res) => {
