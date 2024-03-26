@@ -4,12 +4,34 @@
   padding: 2rem;
   text-align: center;
 }
-
-.logo {
+@media screen and (max-width: 480px) 
+{.logo {
   height: 6em;
   padding: 1.5em;
   will-change: filter;
   transition: filter 300ms;
+  max-width: 120px;
+}
+}
+
+@media screen and (max-width: 768px)
+{.logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
+  max-width: 192px;
+}
+}
+
+@media screen and (max-width: 1024px)
+{.logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
+  max-width: 256px;
+}
 }
 .logo:hover {
   filter: drop-shadow(0 0 2em #646cffaa);
