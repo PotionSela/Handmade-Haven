@@ -17,13 +17,11 @@ const CommentForm = ({ thoughtId }) => {
     console.log('Brother'); // Just for testing purposes
 
     try {
-      const profile = Auth.getProfile();
-      const username = profile.username;
       const { data } = await addComment({
         variables: {
           thoughtId: thoughtId, // Testing to ensure thoughtId is correctly passed
           commentText,
-          commentAuthor: username,
+          commentAuthor: Auth.getProfile().data.username,
         },
       });
 
