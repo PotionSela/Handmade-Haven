@@ -26,9 +26,10 @@ export const ADD_USER = gql`
 
 export const ADD_THOUGHT = gql`
   mutation addThought ($thoughtText: String!, $thoughtAuthor: String!, $image: Upload) {
-    addThought (thoughtText: $thoughtText, thoughtAuthor: $thoughtAuthor, image: $image) {
-        thoughtText
-        thoughtAuthor
+    addThought (thoughtText: $thoughtText, thoughtAuthor: $thoughtAuthor, image: $image) {  
+      image
+      thoughtText
+      thoughtAuthor
     }
   }
 `
@@ -40,15 +41,21 @@ export const UPDATE_THOUGHT = gql`
       thoughtText
       thoughtAuthor
     }
-}
+} 
 `
 
 export const ADD_COMMENT = gql`
-  mutation addComment ($thoughtId: ID!, $commentText: String, $commentAuthor: String!) {
+  mutation addComment ($thoughtId: ID!, $commentText: String!, $commentAuthor: String!) {
     addComment (thoughtId: $thoughtId, commentText: $commentText, commentAuthor: $commentAuthor) {
-      thoughtId
       thoughtText
       thoughtAuthor
+      createdAt
+      comments {
+        _id
+        commentText
+        commentAuthor
+        createdAt
+      }
     }
   }
 `
@@ -56,7 +63,9 @@ export const ADD_COMMENT = gql`
 export const REMOVE_THOUGHT = gql`
   mutation removeThought ($thoughtId: ID!) {
     removeThought (thoughtId: $thoughtId) {
-      thoughtId
+      thoughtText
+      thoughtAuthor
+      createdAt
     }
   }
 `
@@ -64,8 +73,13 @@ export const REMOVE_THOUGHT = gql`
 export const REMOVE_COMMENT = gql`
   mutation removeComment ($thoughtId: ID!, $commentId: ID!) {
     removeComment (thoughtId: $thoughtId, commentId: $commentId) {
-      thoughtId
-      commentId
+      thoughtText
+      comments {
+        _id
+        commentText
+        commentAuthor
+        createdAt
+      }
     }
   }
 `

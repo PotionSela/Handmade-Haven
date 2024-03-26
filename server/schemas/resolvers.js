@@ -46,44 +46,44 @@ const resolvers = {
 
 
       if (!user) {
-        throw new AuthenticationError('Incorrect email or password');
+        throw AuthenticationError;
       }
 
       const correctPw = await user.isCorrectPassword(password);
 
       if (!correctPw) {
-        throw new AuthenticationError;
+        throw AuthenticationError;
       }
 
       const token = signToken(user);
 
       return { token, user };
     },
-    addThought: async (parent, { input: { thoughtText, image } }) => {
+    addThought: async (parent, { thoughtText, thoughtAuthor, image }) => {
       // Logic to handle image upload and save image data to the database
-      const thought = await Thought.create({ thoughtText });
+      const thought = await Thought.create({ thoughtText, thoughtAuthor, image });
 
       // If image is provided, handle image upload and store image data
-      if (image) {
-        try {
-          // Upload the image file using Multer middleware
-          await upload.single('image')(req, res, function (err) {
-            if (err) {
-              // Handle any errors that might occur during file upload
-              console.error('Error uploading file:', err);
-              throw new Error('Error uploading file');
-            } else {
-              // Access the uploaded file details from the 'req.file'
-              const uploadedImage = req.file;
-              // Store the image URL or other relevant data in the thought object
-              thought.imageURL = uploadedImage.path;
-            }
-          });
-        } catch (err) {
-          console.error('Error processing file upload:', err);
-          throw new Error('Error processing file upload');
-        }
-      }
+      // if (image) {
+      //   try {
+      //     // Upload the image file using Multer middleware
+      //     await upload.single('image')(req, res, function (err) {
+      //       if (err) {
+      //         // Handle any errors that might occur during file upload
+      //         console.error('Error uploading file:', err);
+      //         throw new Error('Error uploading file');
+      //       } else {
+      //         // Access the uploaded file details from the 'req.file'
+      //         const uploadedImage = req.file;
+      //         // Store the image URL or other relevant data in the thought object
+      //         thought.imageURL = uploadedImage.path;
+      //       }
+      //     });
+      //   } catch (err) {
+      //     console.error('Error processing file upload:', err);
+      //     throw new Error('Error processing file upload');
+      //   }
+      // }
       return thought;
     },
     updateThought: async (parent, { input: { thoughtId, thoughtText, image } }) => {

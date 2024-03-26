@@ -12,11 +12,11 @@ scalar Upload
 
   type Thought {
     _id: ID
-    thoughtText: String
+    thoughtText: String!
     thoughtAuthor: String!
     createdAt: String
     comments: [Comment]!
-    imageId: ID
+    image: String
   }
 
   type Comment {

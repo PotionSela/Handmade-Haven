@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 
 import { useMutation } from '@apollo/client';
 import { ADD_USER } from '../utils/mutations';
+import '../components/Style/Home.css';
 
 import Auth from '../utils/auth';
 
@@ -52,8 +53,8 @@ const Signup = () => {
   return (
     <main className="flex-row justify-center mb-4">
       <div className="col-12 col-lg-10">
-        <div className="card">
-          <h4 className="card-header bg-dark text-light p-2">Sign Up</h4>
+        <div className="project rounded">
+          <h4 className= "card-header rounded-top">Sign Up</h4>
           <div className="card-body">
             {data ? (
               <p>
@@ -62,6 +63,7 @@ const Signup = () => {
               </p>
             ) : (
               <form onSubmit={handleFormSubmit}>
+                <div className="inputPadding">
                 <input
                   className="form-input"
                   placeholder="Your username"
@@ -70,6 +72,8 @@ const Signup = () => {
                   value={formState.name}
                   onChange={handleChange}
                 />
+                </div>
+                <div className="inputPadding">
                 <input
                   className="form-input"
                   placeholder="Your email"
@@ -78,16 +82,19 @@ const Signup = () => {
                   value={formState.email}
                   onChange={handleChange}
                 />
+                </div>
+                <div className="inputPadding">
                 <input
                   className="form-input"
-                  placeholder="******"
+                  placeholder="Password"
                   name="password"
                   type="password"
                   value={formState.password}
                   onChange={handleChange}
                 />
+                </div>
                 <button
-                  className="btn btn-block btn-primary"
+                  className="btn btn-block btn-secondary btn-outline-dark"
                   style={{ cursor: 'pointer' }}
                   type="submit"
                 >

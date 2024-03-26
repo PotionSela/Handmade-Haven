@@ -18,7 +18,7 @@ const server = new ApolloServer({
 
 const storage = multer.diskStorage({
   destination: function (req, file, cb) {
-    cb(null, 'uploads/') // Store uploaded files in the 'uploads' directory
+    cb(null, path.join(__dirname, 'uploads/')) // Store uploaded files in the 'uploads' directory
   },
   filename: function (req, file, cb) {
     cb(null, file.originalname)  // Use the original filename
@@ -32,6 +32,7 @@ const startApolloServer = async () => {
 
   app.use(express.urlencoded({ extended: false }));
   app.use(express.json());
+  app.use('/images', express.static(path.join(__dirname, './uploads')))
   app.post('/upload', upload.single('file'), (req, res) => {
     res.json({ imageUrl: req.file.path }); // Return the URL of the uploaded image
 });
@@ -41,6 +42,7 @@ const startApolloServer = async () => {
   }));
 
   if (process.env.NODE_ENV === 'production') {
+    console.log("Hello");
     app.use(express.static(path.join(__dirname, '../client/dist')));
 
     app.get('*', (req, res) => {

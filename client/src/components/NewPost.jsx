@@ -1,12 +1,13 @@
 import { useState } from 'react';
 import { useMutation } from '@apollo/client';
-
+import Dropzone from './Dropzone';
 import { ADD_THOUGHT } from '../utils/mutations';
 
 const ThoughtForm = () => {
   const [formState, setFormState] = useState({
     thoughtText: '',
     thoughtAuthor: '',
+    image: '',
   });
   const [characterCount, setCharacterCount] = useState(0);
 
@@ -37,12 +38,15 @@ const ThoughtForm = () => {
     const { name, value } = event.target;
 
     if (name === 'thoughtText' && value.length <= 280) {
-      setFormState({ ...formState, [name]: value });
+      setFormState({
+        ...formState,
+        [name]: value
+      });
       setCharacterCount(value.length);
     } else if (name !== 'thoughtText') {
-      setFormState({ ...formState, [name]: value });
+      setFormState({ ...formState, [name]: value});
     }
-  };
+  }
 
   return (
     <div>
@@ -56,6 +60,7 @@ const ThoughtForm = () => {
         Character Count: {characterCount}/280
         {error && <span className="ml-2">Something went wrong...</span>}
       </p>
+      <Dropzone formState={formState} setFormState={setFormState} />
       <form
         className="flex-row justify-center justify-space-between-md align-center"
         onSubmit={handleFormSubmit}
