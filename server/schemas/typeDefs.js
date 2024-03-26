@@ -50,7 +50,6 @@ scalar Upload
     addComment(
       thoughtId: ID!
       commentText: String!
-      commentAuthor: String!
     ): Thought
     removeThought(thoughtId: ID!): Thought
     removeComment(thoughtId: ID!, commentId: ID!): Thought
